@@ -1,36 +1,73 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Über Mich - Dein Name</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dein Name | Developer Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Startseite</a></li>
-                <li><a href="projekte.html">Projekte</a></li>
-                <li><a href="#kontakt">Kontakt</a></li>
-            </ul>
-        </nav>
+  <div class="container">
+    <!-- Header mit Profilbild und Burger Menü -->
+    <header class="header">
+      <img src="profilbild.jpg" alt="Profilbild" class="profile-pic">
+      <div class="burger-menu" id="burger-menu">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <nav id="nav-menu" class="nav-menu hidden">
+        <a href="#hero">Home</a>
+        <a href="#projects">Projekte</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Kontakt</a>
+      </nav>
     </header>
 
+    <!-- Hero Section -->
     <section id="hero">
-        <h1>Hallo, ich bin [Dein Name]!</h1>
-        <p>Willkommen auf meiner persönlichen Webseite. Hier findest du Informationen über meine Projekte, meine Interessen und meine Kontaktmöglichkeiten.</p>
-        <a href="#kontakt" class="button">Kontaktiere mich</a>
+      <h1>Hi, ich bin <span class="highlight">[Dein Name]</span>.</h1>
+      <p>Softwareentwickler, der digitale Lösungen liebt.</p>
     </section>
 
-    <section id="about">
-        <h2>Über Mich</h2>
-        <p>Ich bin [Dein Name], leidenschaftlich an [z.B. Webentwicklung, Technik, Design] interessiert. In meiner Freizeit arbeite ich an spannenden Projekten und bilde mich kontinuierlich weiter. Diese Webseite soll als Portfolio und für Bewerbungszwecke dienen.</p>
-        <p>Meine Stärken: Teamarbeit, Kreativität, und Problemlösung.</p>
+    <!-- Projekte Section -->
+    <section id="projects">
+      <h2>Projekte</h2>
+      <div class="project">
+        <h3>Projekt 1</h3>
+        <p>Kurzbeschreibung des Projekts. <a href="#">Mehr erfahren</a></p>
+      </div>
+      <div class="project">
+        <h3>Projekt 2</h3>
+        <p>Beschreibung eines zweiten Projekts. <a href="#">Mehr erfahren</a></p>
+      </div>
     </section>
 
+    <!-- Blog Section -->
+    <section id="blog">
+      <h2>Blog</h2>
+      <div class="blog-entry">
+        <h3><a href="#">Blogeintrag 1</a></h3>
+        <p>Dies ist ein Platzhalter für den ersten Blogeintrag. <a href="#">Weiterlesen</a></p>
+      </div>
+      <div class="blog-entry">
+        <h3><a href="#">Blogeintrag 2</a></h3>
+        <p>Kurzbeschreibung des zweiten Blogeintrags. <a href="#">Weiterlesen</a></p>
+      </div>
+    </section>
+
+    <!-- Kontakt Section -->
+    <section id="contact">
+      <h2>Kontakt</h2>
+      <p>Du kannst mich jederzeit erreichen unter: <a href="mailto:deinemail@example.com">deinemail@example.com</a></p>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 [Dein Name].</p>
+      <p>© 2024 [Dein Name]. Alle Rechte vorbehalten.</p>
     </footer>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
