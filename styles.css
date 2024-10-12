@@ -55,9 +55,8 @@ body {
 
 /* Navigation Menü */
 .nav-menu {
-  display: flex;
+  display: flex; /* Standardmäßig für Desktop */
   gap: 20px;
-
 }
 
 /* Sichtbarkeit und Position der nav-menu (Desktop) */
@@ -66,7 +65,7 @@ body {
       display: flex; /* Sichtbar auf Desktop */
   }
   .burger-menu {
-      display: none; /* Nicht sichtbar auf Desktop */
+      display: none; /* Burger-Menü nicht sichtbar auf Desktop */
   }
   .nav-menu a {
     color: #21E762; /* Setze die Schriftfarbe auf grün */
@@ -74,7 +73,41 @@ body {
   }
 
   .nav-menu a:hover {
-    color: #26e867; /* Optional: Ändere die Farbe beim Hover für einen visuellen Effekt */
+    color: #26e867; /* Optional: Ändere die Farbe beim Hover */
+  }
+}
+
+/* Responsives Design für mobile Geräte */
+@media (max-width: 768px) {
+  .nav-menu {
+      display: none; /* Versteckt auf mobilen Geräten */
+      position: absolute; /* Positioniert über dem Inhalt */
+      top: 70px;
+      right: 10px;
+      background-color: #161b22; /* Hintergrundfarbe des Menüs */
+      width: 200px;
+      padding: 10px;
+      border-radius: 8px;
+      flex-direction: column;
+      gap: 10px; /* Abstand zwischen Links */
+      z-index: 100; /* Über anderen Inhalten */
+  }
+
+  .burger-menu {
+      display: flex; /* Burger-Menü sichtbar auf mobilen Geräten */
+  }
+
+  /* Wenn das Menü sichtbar ist */
+  .nav-menu.show {
+      display: flex;
+  }
+
+  .blog-entry {
+      flex: 1 1 calc(100% - 20px); /* Volle Breite auf kleinen Bildschirmen */
+  }
+
+  a {
+      color: #26e867;
   }
 }
 
@@ -110,16 +143,16 @@ body {
 
 /* Blogeintrag Box */
 .blog-entry {
-  flex: 1 1 calc(33.333% - 20px); /* 3 Spalten, abzüglich Abstand */
-  background-color: #21262d; /* Hintergrundfarbe der Box */
-  border-radius: 8px; /* Abgerundete Ecken */
-  overflow: hidden; /* Verhindert Überlauf */
-  transition: transform 0.3s; /* Animationseffekt */
+  flex: 1 1 calc(33.333% - 20px); /* 3 Spalten auf Desktop */
+  background-color: #21262d;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s;
 }
 
 .blog-entry a {
   text-decoration: none;
-  color: #c9d1d9; /* Schriftfarbe geändert */
+  color: #c9d1d9;
 }
 
 .blog-entry:hover {
@@ -130,7 +163,7 @@ body {
 .blog-image {
   width: 100%; /* Bild auf volle Breite */
   height: 150px; /* Feste Höhe */
-  object-fit: cover; /* Bildfüllung */
+  object-fit: cover;
 }
 
 /* Kontakt Section */
@@ -146,99 +179,3 @@ footer {
   color: #8b949e;
 }
 
-/* Responsives Design */
-@media (max-width: 768px) {
-  .nav-menu {
-      display: none; /* Versteckt auf mobilen Geräten */
-      position: absolute;
-      top: 70px;
-      right: 10px;
-      background-color: #161b22;
-      padding: 10px;
-      border-radius: 8px;
-      flex-direction: column;
-      gap: 10px;
-  }
-
-  .burger-menu {
-      display: flex; /* Burger-Menü sichtbar auf mobilen Geräten */
-  }
-
-  .blog-entry {
-      flex: 1 1 calc(100% - 20px); /* Vollständige Breite auf kleinen Bildschirmen */
-  }
-
-  .hidden {
-      display: none;
-  }
-
-  a {
-      color: #26e867;
-  }
-  
-  
-  
-  
-  
-  
-  
-  /* Navigation Menü */
-.nav-menu {
-  display: flex; /* Standardmäßig für Desktop */
-  gap: 20px;
-}
-
-/* Sichtbarkeit und Position der nav-menu (Desktop) */
-@media (min-width: 769px) {
-  .nav-menu {
-      display: flex; /* Sichtbar auf Desktop */
-  }
-  .burger-menu {
-      display: none; /* Burger-Menü nicht sichtbar auf Desktop */
-  }
-  .nav-menu a {
-    color: #21E762; /* Setze die Schriftfarbe auf grün */
-    text-decoration: none;
-  }
-
-  .nav-menu a:hover {
-    color: #26e867; /* Optional: Ändere die Farbe beim Hover für einen visuellen Effekt */
-  }
-}
-
-/* Responsives Design */
-@media (max-width: 768px) {
-  .nav-menu {
-      display: none; /* Versteckt auf mobilen Geräten */
-      position: absolute; /* Position wird absolut, damit es über den Inhalt kommt */
-      top: 70px; /* Positioniert das Menü unter dem Header */
-      right: 10px; /* Positionierung von rechts */
-      background-color: #161b22; /* Hintergrundfarbe des Menüs */
-      padding: 10px; /* Innenabstand */
-      border-radius: 8px; /* Abgerundete Ecken */
-      flex-direction: column; /* Menüeinträge untereinander */
-      gap: 10px; /* Abstand zwischen den Einträgen */
-  }
-
-  .burger-menu {
-      display: flex; /* Burger-Menü sichtbar auf mobilen Geräten */
-  }
-
-  .blog-entry {
-      flex: 1 1 calc(100% - 20px); /* Vollständige Breite auf kleinen Bildschirmen */
-  }
-
-  .hidden {
-      display: none;
-  }
-
-  a {
-      color: #26e867;
-  }
-}
-
-  
-  
-  
-  
-}
