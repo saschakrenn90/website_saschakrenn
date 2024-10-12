@@ -1,0 +1,129 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #0d1117;
+    color: #c9d1d9;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Header mit Profilbild und Burger Menü */
+  .header {
+    position: relative;
+    height: 60px;
+  }
+  
+  /* Profilbild in der linken oberen Ecke */
+  .profile-pic {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  /* Burger-Menü in der rechten oberen Ecke */
+  .burger-menu {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+  
+  .burger-menu .line {
+    width: 30px;
+    height: 3px;
+    background-color: #c9d1d9;
+    transition: 0.3s;
+  }
+  
+  /* Navigation Menü */
+  .nav-menu {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-menu a {
+    color: #58a6ff;
+    text-decoration: none;
+  }
+  
+  /* Hero Section */
+  #hero {
+    text-align: center;
+    margin: 100px 0;
+  }
+  
+  .highlight {
+    color: #58a6ff;
+    font-weight: bold;
+  }
+  
+  /* Projekte & Blog Section */
+  #projects, #blog {
+    margin: 50px 0;
+  }
+  
+  .project, .blog-entry {
+    margin-bottom: 20px;
+  }
+  
+  .project a, .blog-entry a {
+    color: #58a6ff;
+    text-decoration: none;
+  }
+  
+  /* Kontakt Section */
+  #contact {
+    margin: 50px 0;
+    text-align: center;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    margin-top: 50px;
+    color: #8b949e;
+  }
+  
+  /* Responsives Design */
+  @media (max-width: 768px) {
+    .nav-menu {
+      display: none; /* Menü verstecken auf kleinen Bildschirmen */
+      position: absolute;
+      top: 70px;
+      right: 10px;
+      background-color: #161b22;
+      padding: 10px;
+      border-radius: 8px;
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .burger-menu {
+      display: flex;
+    }
+  
+    .hidden {
+      display: none;
+    }
+  }
+  
