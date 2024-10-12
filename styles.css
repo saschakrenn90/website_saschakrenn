@@ -1,124 +1,178 @@
 /* Global Styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    background-color: #0d1117;
-    color: #c9d1d9;
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    width: 100%;
-    overflow-x: hidden;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  /* Header mit Profilbild und Burger Menü */
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-  }
-  
-  .profile-pic {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-  
-  /* Burger Menü */
-  .burger-menu {
-    cursor: pointer;
-    display: none; /* Standardmäßig ausgeblendet auf großen Bildschirmen */
-    flex-direction: column;
-    gap: 5px;
-  }
-  
-  .burger-menu .line {
-    width: 30px;
-    height: 3px;
-    background-color: #c9d1d9;
-    transition: 0.3s;
-  }
-  
-  /* Navigation Menü */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace, override;
+}
+
+body {
+  background-color: #0d1117;
+  color: #c9d1d9;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Header: Vollbild und flexibles Layout */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  background-color: #161b22; /* Optional: Hintergrundfarbe */
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 60px;
+  z-index: 100; /* Header bleibt über anderen Inhalten */
+}
+
+/* Profilbild in der linken Ecke */
+.profile-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Burger-Menü in der rechten Ecke (nur auf mobilen Geräten sichtbar) */
+.burger-menu {
+  display: none; /* Standardmäßig verstecken */
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.burger-menu .line {
+  width: 30px;
+  height: 3px;
+  background-color: #c9d1d9;
+  transition: 0.3s;
+}
+
+/* Navigation Menü */
+.nav-menu {
+  display: flex;
+  gap: 20px;
+
+}
+
+/* Sichtbarkeit und Position der nav-menu (Desktop) */
+@media (min-width: 769px) {
   .nav-menu {
-    display: flex;
-    gap: 20px;
+      display: flex; /* Sichtbar auf Desktop */
   }
-  
+  .burger-menu {
+      display: none; /* Nicht sichtbar auf Desktop */
+  }
   .nav-menu a {
-    color: #58a6ff;
+    color: #21E762; /* Setze die Schriftfarbe auf grün */
     text-decoration: none;
   }
-  
-  /* Hero Section */
-  #hero {
-    text-align: center;
-    margin: 100px 0;
+
+  .nav-menu a:hover {
+    color: #26e867; /* Optional: Ändere die Farbe beim Hover für einen visuellen Effekt */
   }
-  
-  .highlight {
-    color: #58a6ff;
-    font-weight: bold;
-  }
-  
-  /* Projekte & Blog Section */
-  #projects, #blog {
-    margin: 50px 0;
-  }
-  
-  .project, .blog-entry {
-    margin-bottom: 20px;
-  }
-  
-  .project a, .blog-entry a {
-    color: #58a6ff;
-    text-decoration: none;
-  }
-  
-  /* Kontakt Section */
-  #contact {
-    margin: 50px 0;
-    text-align: center;
-  }
-  
-  /* Footer */
-  footer {
-    text-align: center;
-    margin-top: 50px;
-    color: #8b949e;
-  }
-  
-  /* Responsives Design */
-  @media (max-width: 768px) {
-    .nav-menu {
-      display: none; /* Menü verstecken auf kleinen Bildschirmen */
+}
+
+/* Hero Section */
+#hero {
+  text-align: center;
+  margin: 100px 0;
+}
+
+.highlight {
+  color: #26e867; /* Schriftfarbe geändert */
+  font-weight: bold;
+}
+
+/* Projekte & Blog Section */
+#projects,
+#blog {
+  margin: 50px 0;
+  color: #26e867;
+}
+
+.project {
+  margin-bottom: 20px;
+  color: #c9d1d9;
+}
+
+/* Blog Container */
+.blog-container {
+  display: flex;
+  flex-wrap: wrap; /* Ermöglicht Zeilenumbruch */
+  gap: 20px; /* Abstand zwischen den Boxen */
+}
+
+/* Blogeintrag Box */
+.blog-entry {
+  flex: 1 1 calc(33.333% - 20px); /* 3 Spalten, abzüglich Abstand */
+  background-color: #21262d; /* Hintergrundfarbe der Box */
+  border-radius: 8px; /* Abgerundete Ecken */
+  overflow: hidden; /* Verhindert Überlauf */
+  transition: transform 0.3s; /* Animationseffekt */
+}
+
+.blog-entry a {
+  text-decoration: none;
+  color: #c9d1d9; /* Schriftfarbe geändert */
+}
+
+.blog-entry:hover {
+  transform: scale(1.05); /* Vergrößert die Box beim Hover */
+}
+
+/* Bild innerhalb der Blogeinträge */
+.blog-image {
+  width: 100%; /* Bild auf volle Breite */
+  height: 150px; /* Feste Höhe */
+  object-fit: cover; /* Bildfüllung */
+}
+
+/* Kontakt Section */
+#contact {
+  margin: 50px 0;
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 50px;
+  color: #8b949e;
+}
+
+/* Responsives Design */
+@media (max-width: 768px) {
+  .nav-menu {
+      display: none; /* Versteckt auf mobilen Geräten */
       position: absolute;
       top: 70px;
-      right: 20px;
+      right: 10px;
       background-color: #161b22;
       padding: 10px;
       border-radius: 8px;
       flex-direction: column;
       gap: 10px;
-    }
-  
-    .burger-menu {
-      display: flex; /* Burger Menü auf mobilen Geräten anzeigen */
-    }
-  
-    .hidden {
-      display: none;
-    }
   }
-  
+
+  .burger-menu {
+      display: flex; /* Burger-Menü sichtbar auf mobilen Geräten */
+  }
+
+  .blog-entry {
+      flex: 1 1 calc(100% - 20px); /* Vollständige Breite auf kleinen Bildschirmen */
+  }
+
+  .hidden {
+      display: none;
+  }
+
+  a {
+      color: #26e867;
+  }
+}
