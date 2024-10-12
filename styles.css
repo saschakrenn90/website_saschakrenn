@@ -22,15 +22,15 @@ body {
   align-items: center;
   width: 100%;
   padding: 10px;
-  background-color: #161b22; /* Optional: Hintergrundfarbe */
+  background-color: #161b22;
   position: fixed;
   top: 0;
   left: 0;
   height: 60px;
-  z-index: 100; /* Header bleibt über anderen Inhalten */
+  z-index: 100;
 }
 
-/* Profilbild in der linken Ecke */
+/* Profilbild */
 .profile-pic {
   width: 50px;
   height: 50px;
@@ -38,9 +38,9 @@ body {
   object-fit: cover;
 }
 
-/* Burger-Menü in der rechten Ecke (nur auf mobilen Geräten sichtbar) */
+/* Burger-Menü für mobile Ansicht */
 .burger-menu {
-  display: none; /* Standardmäßig verstecken */
+  display: none;
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
@@ -53,61 +53,54 @@ body {
   transition: 0.3s;
 }
 
-/* Navigation Menü */
+/* Navigation */
 .nav-menu {
-  display: flex; /* Standardmäßig für Desktop */
+  display: flex;
   gap: 20px;
 }
 
-/* Sichtbarkeit und Position der nav-menu (Desktop) */
 @media (min-width: 769px) {
   .nav-menu {
-      display: flex; /* Sichtbar auf Desktop */
+    display: flex;
   }
   .burger-menu {
-      display: none; /* Burger-Menü nicht sichtbar auf Desktop */
+    display: none;
   }
   .nav-menu a {
-    color: #21E762; /* Setze die Schriftfarbe auf grün */
+    color: #21E762;
     text-decoration: none;
   }
 
   .nav-menu a:hover {
-    color: #26e867; /* Optional: Ändere die Farbe beim Hover */
+    color: #26e867;
   }
 }
 
-/* Responsives Design für mobile Geräte */
 @media (max-width: 768px) {
   .nav-menu {
-      display: none; /* Versteckt auf mobilen Geräten */
-      position: absolute; /* Positioniert über dem Inhalt */
-      top: 70px;
-      right: 10px;
-      background-color: #161b22; /* Hintergrundfarbe des Menüs */
-      width: 200px;
-      padding: 10px;
-      border-radius: 8px;
-      flex-direction: column;
-      gap: 10px; /* Abstand zwischen Links */
-      z-index: 100; /* Über anderen Inhalten */
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    background-color: #161b22;
+    width: 200px;
+    padding: 10px;
+    border-radius: 8px;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 100;
   }
 
   .burger-menu {
-      display: flex; /* Burger-Menü sichtbar auf mobilen Geräten */
+    display: flex;
   }
 
-  /* Wenn das Menü sichtbar ist */
   .nav-menu.show {
-      display: flex;
-  }
-
-  .blog-entry {
-      flex: 1 1 calc(100% - 20px); /* Volle Breite auf kleinen Bildschirmen */
+    display: flex;
   }
 
   a {
-      color: #26e867;
+    color: #26e867;
   }
 }
 
@@ -118,7 +111,7 @@ body {
 }
 
 .highlight {
-  color: #26e867; /* Schriftfarbe geändert */
+  color: #26e867;
   font-weight: bold;
 }
 
@@ -137,17 +130,25 @@ body {
 /* Blog Container */
 .blog-container {
   display: flex;
-  flex-wrap: wrap; /* Ermöglicht Zeilenumbruch */
+  flex-wrap: wrap; /* Zeilenumbruch bei Bedarf */
   gap: 20px; /* Abstand zwischen den Boxen */
+  justify-content: center; /* Zentriert die Blog-Einträge */
 }
 
-/* Blogeintrag Box */
 .blog-entry {
   flex: 1 1 calc(33.333% - 20px); /* 3 Spalten auf Desktop */
+  max-width: 400px; /* Maximalbreite pro Eintrag */
   background-color: #21262d;
   border-radius: 8px;
   overflow: hidden;
   transition: transform 0.3s;
+}
+
+/* Anpassung für mobile Geräte */
+@media (max-width: 768px) {
+  .blog-entry {
+    flex: 1 1 100%; /* Vollbreite auf mobilen Geräten */
+  }
 }
 
 .blog-entry a {
@@ -159,10 +160,10 @@ body {
   transform: scale(1.05); /* Vergrößert die Box beim Hover */
 }
 
-/* Bild innerhalb der Blogeinträge */
+/* Blog-Bild */
 .blog-image {
-  width: 100%; /* Bild auf volle Breite */
-  height: 150px; /* Feste Höhe */
+  width: 100%;
+  height: 150px;
   object-fit: cover;
 }
 
