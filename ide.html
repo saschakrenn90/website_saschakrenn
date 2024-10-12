@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python IDE</title>
+
+  <!-- CodeMirror Styles & Scripts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/python/python.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+
+  <link rel="stylesheet" href="ide_styles.css">
+</head>
+<body>
+  <header class="header">
+    <a href="index.html" class="profile-pic">Zurück</a>
+    <h1 class="ide-title">Python IDE</h1>
+  </header>
+
+  <div class="ide-container">
+    <div class="editor-container">
+      <textarea id="python-code">print("Hello, World!")</textarea>
+    </div>
+    <div class="output-container">
+      <pre id="output" class="console-output">Hier erscheint der Output...</pre>
+    </div>
+  </div>
+
+  <button id="run-code" class="run-btn">Code ausführen</button>
+
+  <script>
+    async function main() {
+      const pyodide = await loadPyodide();
+      console.log("Pyodide geladen");
+
+      const runButton = document.getElementById("run-code");
+      const outputElement = document.getElementById("output");
+
+      // CodeMirror-Editor initialisieren
+      const editor = CodeMirror.fromTextArea(document.getElementById("python-code"), {
+        mode: "python",
+        theme: "default",
+        lineNumbers: true,
+        indentUnit: 4,
+        matchBrackets: true,
+      });
+
+      // Output-Handling: Standard-Output abfangen
+      function captureOutput() {
+        let output = "";
+        const originalConsoleLog = console.log;
+        console.log = (...args) => {
+          output += args.join(" ") + "\n";
+          originalConsoleLog(...args);  // Zum Debugging in die echte Konsole loggen
+        };
+        return () => output;  // Rückgabefunktion
+      }
+
+      runButton.addEventListener("click", async () => {
+        const code = editor.getValue();
+        outputElement.textContent = "Code wird ausgeführt...\n";
+
+        const getCapturedOutput = captureOutput();  // Ausgabe abfangen
+
+        try {
+          await pyodide.runPythonAsync(`
+            import sys
+            from js import console
+            class StdoutCatcher:
+                def __init__(self):
+                    self.output = ""
+                def write(self, text):
+                    self.output += text
+                    console.log(text)  # Ausgabe ins JS-Log umleiten
+                def flush(self):
+                    pass
+
+            sys.stdout = StdoutCatcher()  # Standardausgabe umleiten
+            ${code}
+          `);
+          const result = getCapturedOutput();  // Ausgabe abrufen
+          outputElement.textContent += result;
+        } catch (error) {
+          outputElement.textContent += "Fehler: " + error + "\n";
+          console.error("Fehler beim Ausführen des Codes:", error);
+        }
+      });
+    }
+
+    main();
+  </script>
+</body>
+</html>

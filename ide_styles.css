@@ -1,0 +1,91 @@
+/* Global Styles */
+body {
+  background-color: #0d1117;
+  color: #c9d1d9;
+  margin: 0;
+  padding: 0;
+  font-family: 'Fira Code', monospace;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Header Styling */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #161b22;
+  padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  box-sizing: border-box;
+}
+
+.ide-title {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #21E762;
+}
+
+/* IDE Layout */
+.ide-container {
+  display: flex;
+  height: calc(100vh - 150px);
+  margin-top: 60px;
+  gap: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.editor-container, .output-container {
+  width: 50%;
+  height: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #21262d;
+}
+
+/* CodeMirror Styling */
+.CodeMirror {
+  height: 100%;
+  background-color: #21262d;
+  color: #c9d1d9;
+}
+
+.console-output {
+  background-color: #0d1117;
+  color: #21E762;
+  padding: 10px;
+  border-radius: 8px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+}
+
+.run-btn {
+  margin: 10px auto;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #21E762;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #0d1117;
+  display: block;
+}
+
+.run-btn:hover {
+  background-color: #1fbe5f;
+}
+
+@media (max-width: 768px) {
+  .ide-container {
+      flex-direction: column;
+  }
+
+  .editor-container, .output-container {
+      width: 100%;
+      height: 50%;
+  }
+}
