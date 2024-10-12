@@ -10,38 +10,35 @@
     color: #c9d1d9;
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    width: 100%;
     overflow-x: hidden;
+    width: 100%;
   }
   
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  /* Header mit Profilbild und Burger Menü */
+  /* Header: Vollbild und flexibles Layout */
   .header {
-    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    background-color: #161b22; /* Optional: Hintergrundfarbe */
+    position: fixed;
+    top: 0;
+    left: 0;
     height: 60px;
+    z-index: 100; /* Header bleibt über anderen Inhalten */
   }
   
-  /* Profilbild in der linken oberen Ecke */
+  /* Profilbild in der linken Ecke */
   .profile-pic {
-    position: absolute;
-    top: 10px;
-    left: 10px;
     width: 50px;
     height: 50px;
     border-radius: 50%;
     object-fit: cover;
   }
   
-  /* Burger-Menü in der rechten oberen Ecke */
+  /* Burger-Menü in der rechten Ecke */
   .burger-menu {
-    position: absolute;
-    top: 10px;
-    right: 10px;
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -62,7 +59,7 @@
   }
   
   .nav-menu a {
-    color: #58a6ff;
+    color: #21E762; /* Schriftfarbe geändert */
     text-decoration: none;
   }
   
@@ -73,7 +70,7 @@
   }
   
   .highlight {
-    color: #58a6ff;
+    color: #21E762; /* Schriftfarbe geändert */
     font-weight: bold;
   }
   
@@ -82,13 +79,40 @@
     margin: 50px 0;
   }
   
-  .project, .blog-entry {
+  .project {
     margin-bottom: 20px;
   }
   
-  .project a, .blog-entry a {
-    color: #58a6ff;
+  /* Blog Container */
+  .blog-container {
+    display: flex;
+    flex-wrap: wrap; /* Ermöglicht Zeilenumbruch */
+    gap: 20px; /* Abstand zwischen den Boxen */
+  }
+  
+  /* Blogeintrag Box */
+  .blog-entry {
+    flex: 1 1 calc(33.333% - 20px); /* 3 Spalten, abzüglich Abstand */
+    background-color: #21262d; /* Hintergrundfarbe der Box */
+    border-radius: 8px; /* Abgerundete Ecken */
+    overflow: hidden; /* Verhindert Überlauf */
+    transition: transform 0.3s; /* Animationseffekt */
+  }
+  
+  .blog-entry a {
     text-decoration: none;
+    color: #21E762; /* Schriftfarbe geändert */
+  }
+  
+  .blog-entry:hover {
+    transform: scale(1.05); /* Vergrößert die Box beim Hover */
+  }
+  
+  /* Bild innerhalb der Blogeinträge */
+  .blog-image {
+    width: 100%; /* Bild auf volle Breite */
+    height: 150px; /* Feste Höhe */
+    object-fit: cover; /* Bildfüllung */
   }
   
   /* Kontakt Section */
@@ -107,7 +131,7 @@
   /* Responsives Design */
   @media (max-width: 768px) {
     .nav-menu {
-      display: none; /* Menü verstecken auf kleinen Bildschirmen */
+      display: none;
       position: absolute;
       top: 70px;
       right: 10px;
@@ -122,8 +146,22 @@
       display: flex;
     }
   
+    .blog-entry {
+      flex: 1 1 calc(100% - 20px); /* Vollständige Breite auf kleinen Bildschirmen */
+    }
+  
     .hidden {
       display: none;
     }
+
+    a {
+        color: #FF0000; /* Setze die gewünschte Farbe hier */
+        text-decoration: none; /* Entfernt die Standard-Unterstreichung */
+      }
+      
+      a:hover {
+        text-decoration: underline; /* Optional: Unterstreichung beim Hover */
+      }
+      
   }
   

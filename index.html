@@ -7,30 +7,27 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <!-- Header mit Profilbild und Burger Menü -->
-    <header class="header">
-      <img src="profilbild.jpg" alt="Profilbild" class="profile-pic">
-      <div class="burger-menu" id="burger-menu">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-      </div>
-      <nav id="nav-menu" class="nav-menu hidden">
-        <a href="#hero">Home</a>
-        <a href="#projects">Projekte</a>
-        <a href="#blog">Blog</a>
-        <a href="#contact">Kontakt</a>
-      </nav>
-    </header>
+  <header class="header">
+    <img src="profile_01.jpg" alt="Profilbild" class="profile-pic">
+    <div class="burger-menu" id="burger-menu">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+    <nav id="nav-menu" class="nav-menu hidden">
+      <a href="#hero">Home</a>
+      <a href="#projects">Projekte</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Kontakt</a>
+    </nav>
+  </header>
 
-    <!-- Hero Section -->
+  <div class="container">
     <section id="hero">
       <h1>Hi, ich bin <span class="highlight">[Dein Name]</span>.</h1>
       <p>Softwareentwickler, der digitale Lösungen liebt.</p>
     </section>
 
-    <!-- Projekte Section -->
     <section id="projects">
       <h2>Projekte</h2>
       <div class="project">
@@ -43,26 +40,38 @@
       </div>
     </section>
 
-    <!-- Blog Section -->
     <section id="blog">
       <h2>Blog</h2>
-      <div class="blog-entry">
-        <h3><a href="#">Blogeintrag 1</a></h3>
-        <p>Dies ist ein Platzhalter für den ersten Blogeintrag. <a href="#">Weiterlesen</a></p>
-      </div>
-      <div class="blog-entry">
-        <h3><a href="#">Blogeintrag 2</a></h3>
-        <p>Kurzbeschreibung des zweiten Blogeintrags. <a href="#">Weiterlesen</a></p>
+      <div class="blog-container">
+        <div class="blog-entry">
+          <a href="#">
+            <img src="platzhalter1.jpg" alt="Blogeintrag 1" class="blog-image">
+            <h3>Blogeintrag 1</h3>
+            <p>Kurzbeschreibung des ersten Blogeintrags.</p>
+          </a>
+        </div>
+        <div class="blog-entry">
+          <a href="#">
+            <img src="platzhalter2.jpg" alt="Blogeintrag 2" class="blog-image">
+            <h3>Blogeintrag 2</h3>
+            <p>Kurzbeschreibung des zweiten Blogeintrags.</p>
+          </a>
+        </div>
+        <div class="blog-entry">
+          <a href="#">
+            <img src="platzhalter3.jpg" alt="Blogeintrag 3" class="blog-image">
+            <h3>Blogeintrag 3</h3>
+            <p>Kurzbeschreibung des dritten Blogeintrags.</p>
+          </a>
+        </div>
       </div>
     </section>
 
-    <!-- Kontakt Section -->
     <section id="contact">
       <h2>Kontakt</h2>
-      <p>Du kannst mich jederzeit erreichen unter: <a href="mailto:deinemail@example.com">deinemail@example.com</a></p>
+      <p>Erreichbar unter: <a href="mailto:deinemail@example.com">deinemail@example.com</a></p>
     </section>
 
-    <!-- Footer -->
     <footer>
       <p>© 2024 [Dein Name]. Alle Rechte vorbehalten.</p>
     </footer>
