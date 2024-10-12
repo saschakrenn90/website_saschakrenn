@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color:red;
   }
   
   body {
@@ -70,7 +71,7 @@
   }
   
   .highlight {
-    color: #21E762; /* Schriftfarbe geändert */
+    color: #26e867; /* Schriftfarbe geändert */
     font-weight: bold;
   }
   
@@ -79,8 +80,9 @@
     margin: 50px 0;
   }
   
-  .project {
+  .project a {
     margin-bottom: 20px;
+    color: #26e867;
   }
   
   /* Blog Container */
@@ -153,15 +155,10 @@
     .hidden {
       display: none;
     }
-
-    a {
-        color: #FF0000; /* Setze die gewünschte Farbe hier */
-        text-decoration: none; /* Entfernt die Standard-Unterstreichung */
-      }
       
-      a:hover {
-        text-decoration: underline; /* Optional: Unterstreichung beim Hover */
-      }
-      
+    .line {
+        color: red;
+    }
+   
   }
   
