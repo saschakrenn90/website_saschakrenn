@@ -127,6 +127,16 @@ body {
   color: #c9d1d9;
 }
 
+.projects-container {
+  display: flex;
+  flex-wrap: wrap; /* Zeilenumbruch bei Bedarf */
+  gap: 20px; /* Abstand zwischen den Boxen */
+  
+  justify-content: center; /* Zentriert die Blog-Einträge */
+}
+
+
+
 /* Blog Container */
 .blog-container {
   display: flex;
